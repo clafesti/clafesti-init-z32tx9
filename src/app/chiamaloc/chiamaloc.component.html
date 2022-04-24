@@ -1,0 +1,14 @@
+<p>Chiama il Canada</p>
+<button (click)="chiamaCanada()">chiama</button>
+
+<!-- Verifica che ci siano dei dati pronti. Se ci sono possono essere visualizzati -->
+<span *ngIf="datiPronti; else alternativa">
+  <!-- visualizza l'elenco dei dati forniti da un campo interno json -->
+  <p *ngFor="let elenco of datiCanada.result">
+    {{ elenco.data.package.notes_translated.en }}
+  </p>
+</span>
+
+<ng-template #alternativa>
+  <h2 *ngIf="staCaricando">Sta caricando i dati</h2>
+</ng-template>

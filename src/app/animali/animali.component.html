@@ -1,0 +1,26 @@
+<!-- https://getbootstrap.com/docs/5.1/content/tables/ -->
+
+
+<table *ngIf="isAutorizzato(); else nonav" class="table table-success table-striped">
+  <thead>
+    <tr>
+      <th scope="col">id</th>
+      <th scope="col">scientific_name</th>
+      <th scope="col">common_name</th>
+      <th scope="col">city</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let elenco of elencoAnimali">
+      <th scope="row">{{elenco.id}}</th>
+      <td>{{elenco.scientific_name}}</td>
+      <td>{{elenco.common_name}}</td>
+      <td>{{elenco.city}}</td>
+    </tr>
+  </tbody>
+</table>
+
+<ng-template #nonav>
+  <h1>NON SEI AUTORIZZATO</h1>
+</ng-template>
+

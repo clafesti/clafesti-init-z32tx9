@@ -1,0 +1,35 @@
+<h3>giocatore {{ nomeGiocatore }}</h3>
+<!-- il contenitore assume un colore del bordo diverso ad ogni giocata 
+    Esempio di utilizzo di ngClass -->
+<div class="container" [ngClass]="bordo">
+  <div class="row">
+    <!-- crea i 5 dadi utilizzando il vettore dichiarato "dadi" -->
+
+    <div class="col-sm-2" *ngFor="let dado of dadi">
+      <span *ngIf="abilitato; else init">
+        <img [src]="percorsoBase + dado.nomeImg" class="card-img-top" alt="" />
+        <p>
+          Fissa dado
+          <!-- il check permette di fissare il dado e non rigiocarlo -->
+          <input type="checkbox" [(ngModel)]="dado.check" />
+        </p>
+      </span>
+      <ng-template #init>
+        <span>
+            <img [src]="visDadoInit" class="card-img-top" alt="" />
+        </span>
+      </ng-template>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col">
+      <p>Nome giocatore {{ nomeGiocatore }}</p>
+      <p>giocata {{ tmpUscita }}</p>
+    </div>
+    <div class="col-sm-6">
+      <button (click)="giocata()" class="btn btn-primary">gioca</button>
+      <p>punteggio {{ valore }}</p>
+    </div>
+  </div>
+</div>

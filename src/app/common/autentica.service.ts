@@ -1,0 +1,625 @@
+import { Injectable } from '@angular/core';
+import { Animali } from './animali';
+
+@Injectable({
+  providedIn: 'root',
+})
+export class AutenticaService {
+  elenco : Animali[] = [
+    {
+      id: 1,
+      scientific_name: 'Heloderma horridum',
+      common_name: 'Monster, gila',
+      city: 'Qianjiang',
+    },
+    {
+      id: 2,
+      scientific_name: 'Otaria flavescens',
+      common_name: 'Southern sea lion',
+      city: 'Betio Village',
+    },
+    {
+      id: 3,
+      scientific_name: 'Spizaetus coronatus',
+      common_name: 'Crowned eagle',
+      city: 'Niños Heroes',
+    },
+    {
+      id: 4,
+      scientific_name: 'Speothos vanaticus',
+      common_name: 'Dog, bush',
+      city: 'Barvinkove',
+    },
+    {
+      id: 5,
+      scientific_name: 'Felis concolor',
+      common_name: 'Puma',
+      city: 'Sanjwāl',
+    },
+    {
+      id: 6,
+      scientific_name: 'Kobus vardonii vardoni',
+      common_name: 'Puku',
+      city: 'Karangsari',
+    },
+    {
+      id: 7,
+      scientific_name: 'Pseudalopex gymnocercus',
+      common_name: "Zorro, azara's",
+      city: 'Adassil',
+    },
+    {
+      id: 8,
+      scientific_name: 'Coendou prehensilis',
+      common_name: 'Porcupine, tree',
+      city: 'Bęczarka',
+    },
+    {
+      id: 9,
+      scientific_name: 'Aonyx cinerea',
+      common_name: 'Small-clawed otter',
+      city: 'Agadez',
+    },
+    {
+      id: 10,
+      scientific_name: 'Zosterops pallidus',
+      common_name: 'Pale white-eye',
+      city: 'Bacag',
+    },
+    {
+      id: 11,
+      scientific_name: 'Centrocercus urophasianus',
+      common_name: 'Hen, sage',
+      city: 'Markópoulo',
+    },
+    {
+      id: 12,
+      scientific_name: 'Cynomys ludovicianus',
+      common_name: 'Dog, black-tailed prairie',
+      city: 'Digby',
+    },
+    {
+      id: 13,
+      scientific_name: 'Lamprotornis nitens',
+      common_name: 'Starling, cape',
+      city: 'Eleftheroúpolis',
+    },
+    {
+      id: 14,
+      scientific_name: 'Tamiasciurus hudsonicus',
+      common_name: 'Red squirrel',
+      city: 'Besançon',
+    },
+    {
+      id: 15,
+      scientific_name: 'Pelecans onocratalus',
+      common_name: 'Eastern white pelican',
+      city: 'Sapporo',
+    },
+    {
+      id: 16,
+      scientific_name: 'Gymnorhina tibicen',
+      common_name: 'Black-backed magpie',
+      city: 'Akhmīm',
+    },
+    {
+      id: 17,
+      scientific_name: 'Spermophilus armatus',
+      common_name: 'Uinta ground squirrel',
+      city: 'Xinxi',
+    },
+    {
+      id: 18,
+      scientific_name: 'Tachybaptus ruficollis',
+      common_name: 'Little grebe',
+      city: 'Apartadó',
+    },
+    {
+      id: 19,
+      scientific_name: 'Pelecanus occidentalis',
+      common_name: 'Pelican, brown',
+      city: 'Khong Chai',
+    },
+    {
+      id: 20,
+      scientific_name: 'Marmota flaviventris',
+      common_name: 'Marmot, yellow-bellied',
+      city: 'San José de Colinas',
+    },
+    {
+      id: 21,
+      scientific_name: 'Geospiza sp.',
+      common_name: 'Darwin ground finch (unidentified)',
+      city: 'Jubb Ramlah',
+    },
+    {
+      id: 22,
+      scientific_name: 'Felis libyca',
+      common_name: 'Cat, cape wild',
+      city: 'Sydney',
+    },
+    {
+      id: 23,
+      scientific_name: 'Vulpes cinereoargenteus',
+      common_name: 'Grey fox',
+      city: 'Mairinque',
+    },
+    {
+      id: 24,
+      scientific_name: 'Hippotragus equinus',
+      common_name: 'Roan antelope',
+      city: 'Psáry',
+    },
+    {
+      id: 25,
+      scientific_name: 'Uraeginthus granatina',
+      common_name: 'Waxbill, violet-eared',
+      city: 'Vista Hermosa',
+    },
+    {
+      id: 26,
+      scientific_name: 'Choriotis kori',
+      common_name: 'Bustard, kori',
+      city: 'Qintang',
+    },
+    {
+      id: 27,
+      scientific_name: 'Anthropoides paradisea',
+      common_name: 'Stanley crane',
+      city: 'Bayanaūyl',
+    },
+    {
+      id: 28,
+      scientific_name: 'Genetta genetta',
+      common_name: 'Common genet',
+      city: 'Padangulaktanding',
+    },
+    {
+      id: 29,
+      scientific_name: 'Anas punctata',
+      common_name: 'Hottentot teal',
+      city: 'Shchukino',
+    },
+    {
+      id: 30,
+      scientific_name: 'Columba livia',
+      common_name: 'Feral rock pigeon',
+      city: 'Staropyshminsk',
+    },
+    {
+      id: 31,
+      scientific_name: 'Lepus arcticus',
+      common_name: 'Hare, arctic',
+      city: 'Sezemice',
+    },
+    {
+      id: 32,
+      scientific_name: 'Dromaeus novaehollandiae',
+      common_name: 'Emu',
+      city: 'Taphan Hin',
+    },
+    {
+      id: 33,
+      scientific_name: 'Bassariscus astutus',
+      common_name: "Miner's cat",
+      city: 'Ma’an',
+    },
+    {
+      id: 34,
+      scientific_name: 'Pituophis melanaleucus',
+      common_name: 'Pine snake (unidentified)',
+      city: 'Marseille',
+    },
+    {
+      id: 35,
+      scientific_name: 'Tauraco porphyrelophus',
+      common_name: 'Turaco, violet-crested',
+      city: 'Châteaudun',
+    },
+    {
+      id: 36,
+      scientific_name: 'Cygnus atratus',
+      common_name: 'Black swan',
+      city: 'Adir',
+    },
+    {
+      id: 37,
+      scientific_name: 'Echimys chrysurus',
+      common_name: 'Arboral spiny rat',
+      city: 'Barranca de Upía',
+    },
+    {
+      id: 38,
+      scientific_name: 'Manouria emys',
+      common_name: 'Burmese brown mountain tortoise',
+      city: 'Baclayon',
+    },
+    {
+      id: 39,
+      scientific_name: 'Merops nubicus',
+      common_name: 'Bee-eater, carmine',
+      city: 'Gò Dầu',
+    },
+    {
+      id: 40,
+      scientific_name: 'Xerus sp.',
+      common_name: 'African ground squirrel (unidentified)',
+      city: 'Nagcarlan',
+    },
+    {
+      id: 41,
+      scientific_name: 'Pavo cristatus',
+      common_name: 'Peacock, blue',
+      city: 'Zhuting',
+    },
+    {
+      id: 42,
+      scientific_name: 'Ursus arctos',
+      common_name: 'Grizzly bear',
+      city: 'Zemio',
+    },
+    {
+      id: 43,
+      scientific_name: 'Felis libyca',
+      common_name: 'Cat, cape wild',
+      city: 'Maliq',
+    },
+    {
+      id: 44,
+      scientific_name: 'Phasianus colchicus',
+      common_name: 'Ring-necked pheasant',
+      city: '‘Alī al Gharbī',
+    },
+    {
+      id: 45,
+      scientific_name: 'Sula dactylatra',
+      common_name: 'Masked booby',
+      city: 'Petrovo-Dal’neye',
+    },
+    {
+      id: 46,
+      scientific_name: 'Cracticus nigroagularis',
+      common_name: 'Black-throated butcher bird',
+      city: 'Urambo',
+    },
+    {
+      id: 47,
+      scientific_name: 'Anser anser',
+      common_name: 'Goose, greylag',
+      city: 'Načeradec',
+    },
+    {
+      id: 48,
+      scientific_name: 'Zenaida asiatica',
+      common_name: 'Dove, white-winged',
+      city: 'Wilfrido Loor Moreira',
+    },
+    {
+      id: 49,
+      scientific_name: 'Fratercula corniculata',
+      common_name: 'Horned puffin',
+      city: 'Osnabrück',
+    },
+    {
+      id: 50,
+      scientific_name: 'Canis mesomelas',
+      common_name: 'Jackal, black-backed',
+      city: 'Gobernador Costa',
+    },
+    {
+      id: 51,
+      scientific_name: 'Himantopus himantopus',
+      common_name: 'Black-winged stilt',
+      city: 'Honolulu',
+    },
+    {
+      id: 52,
+      scientific_name: 'Anser anser',
+      common_name: 'Goose, greylag',
+      city: 'Zhitan',
+    },
+    {
+      id: 53,
+      scientific_name: 'Grus antigone',
+      common_name: 'Sarus crane',
+      city: 'Yuhuazhai',
+    },
+    {
+      id: 54,
+      scientific_name: 'Fulica cristata',
+      common_name: 'Coot, red-knobbed',
+      city: 'Rudong',
+    },
+    {
+      id: 55,
+      scientific_name: 'Fulica cristata',
+      common_name: 'Red-knobbed coot',
+      city: 'Vänersborg',
+    },
+    {
+      id: 56,
+      scientific_name: 'Buteo jamaicensis',
+      common_name: 'Red-tailed hawk',
+      city: 'Aykhal',
+    },
+    {
+      id: 57,
+      scientific_name: 'Canis aureus',
+      common_name: 'Jackal, indian',
+      city: 'Xarag',
+    },
+    {
+      id: 58,
+      scientific_name: 'Amphibolurus barbatus',
+      common_name: 'Western bearded dragon',
+      city: 'Asan',
+    },
+    {
+      id: 59,
+      scientific_name: 'Dasyurus maculatus',
+      common_name: 'Quoll, spotted-tailed',
+      city: 'Metz',
+    },
+    {
+      id: 60,
+      scientific_name: 'Notechis semmiannulatus',
+      common_name: 'Snake, tiger',
+      city: 'Chapimarca',
+    },
+    {
+      id: 61,
+      scientific_name: 'Merops nubicus',
+      common_name: 'Bee-eater, nubian',
+      city: 'Shixiang',
+    },
+    {
+      id: 62,
+      scientific_name: 'Sylvilagus floridanus',
+      common_name: 'Eastern cottontail rabbit',
+      city: 'Кондово',
+    },
+    {
+      id: 63,
+      scientific_name: 'Graspus graspus',
+      common_name: 'Red lava crab',
+      city: 'Obonoma',
+    },
+    {
+      id: 64,
+      scientific_name: 'Ovibos moschatus',
+      common_name: 'Ox, musk',
+      city: 'Cruzeiro',
+    },
+    {
+      id: 65,
+      scientific_name: 'Eremophila alpestris',
+      common_name: 'Horned lark',
+      city: 'Kotadukuh',
+    },
+    {
+      id: 66,
+      scientific_name: 'Picoides pubescens',
+      common_name: 'Downy woodpecker',
+      city: 'Shorko',
+    },
+    {
+      id: 67,
+      scientific_name: 'Meles meles',
+      common_name: 'Badger, european',
+      city: 'Sandata',
+    },
+    {
+      id: 68,
+      scientific_name: 'Picoides pubescens',
+      common_name: 'Downy woodpecker',
+      city: 'Rogoza',
+    },
+    {
+      id: 69,
+      scientific_name: 'Trichoglossus haematodus moluccanus',
+      common_name: 'Rainbow lory',
+      city: 'Chang’an',
+    },
+    {
+      id: 70,
+      scientific_name: 'Kobus vardonii vardoni',
+      common_name: 'Puku',
+      city: 'Nordeste',
+    },
+    {
+      id: 71,
+      scientific_name: 'Trachyphonus vaillantii',
+      common_name: "Levaillant's barbet",
+      city: 'Amieiro',
+    },
+    {
+      id: 72,
+      scientific_name: 'Calyptorhynchus magnificus',
+      common_name: 'Red-tailed cockatoo',
+      city: 'Morro Agudo',
+    },
+    {
+      id: 73,
+      scientific_name: 'Cebus nigrivittatus',
+      common_name: 'Capuchin, weeper',
+      city: 'Carvalheira',
+    },
+    {
+      id: 74,
+      scientific_name: 'Rhabdomys pumilio',
+      common_name: 'Mouse, four-striped grass',
+      city: 'Xijiadian',
+    },
+    {
+      id: 75,
+      scientific_name: 'Semnopithecus entellus',
+      common_name: 'Langur, gray',
+      city: 'Marisol',
+    },
+    {
+      id: 76,
+      scientific_name: 'Limnocorax flavirostra',
+      common_name: 'African black crake',
+      city: 'Kademangan',
+    },
+    {
+      id: 77,
+      scientific_name: 'Ictonyx striatus',
+      common_name: 'Zorilla',
+      city: 'Petaling Jaya',
+    },
+    {
+      id: 78,
+      scientific_name: 'Phoenicopterus ruber',
+      common_name: 'Flamingo, greater',
+      city: 'Quirinópolis',
+    },
+    {
+      id: 79,
+      scientific_name: 'Columba livia',
+      common_name: 'Pigeon, feral rock',
+      city: 'Duantan',
+    },
+    {
+      id: 80,
+      scientific_name: 'Egretta thula',
+      common_name: 'Snowy egret',
+      city: 'Shuangzhong',
+    },
+    {
+      id: 81,
+      scientific_name: 'Castor canadensis',
+      common_name: 'Beaver, american',
+      city: 'Sernovodsk',
+    },
+    {
+      id: 82,
+      scientific_name: 'Ephippiorhynchus mycteria',
+      common_name: 'Stork, black-necked',
+      city: 'Zhongling',
+    },
+    {
+      id: 83,
+      scientific_name: 'Coracias caudata',
+      common_name: 'Lilac-breasted roller',
+      city: 'Malax',
+    },
+    {
+      id: 84,
+      scientific_name: 'Anastomus oscitans',
+      common_name: 'Stork, openbill',
+      city: 'Nizhniye Achaluki',
+    },
+    {
+      id: 85,
+      scientific_name: 'unavailable',
+      common_name: 'Gull, herring',
+      city: 'Panjiang',
+    },
+    {
+      id: 86,
+      scientific_name: 'Canis mesomelas',
+      common_name: 'Jackal, silver-backed',
+      city: 'Itaí',
+    },
+    {
+      id: 87,
+      scientific_name: 'Diomedea irrorata',
+      common_name: 'Albatross, galapagos',
+      city: 'Nicosia',
+    },
+    {
+      id: 88,
+      scientific_name: 'Dasypus novemcinctus',
+      common_name: 'Armadillo, nine-banded',
+      city: 'Trakai',
+    },
+    {
+      id: 89,
+      scientific_name: 'Larus fuliginosus',
+      common_name: 'Gull, dusky',
+      city: 'Fuxing',
+    },
+    {
+      id: 90,
+      scientific_name: 'Felis concolor',
+      common_name: 'Puma, south american',
+      city: 'Lahoysk',
+    },
+    {
+      id: 91,
+      scientific_name: 'Rangifer tarandus',
+      common_name: 'Caribou',
+      city: 'Cherryville',
+    },
+    {
+      id: 92,
+      scientific_name: 'Lamprotornis chalybaeus',
+      common_name: 'Starling, greater blue-eared',
+      city: 'Cimaung Kidul',
+    },
+    {
+      id: 93,
+      scientific_name: 'Eunectes sp.',
+      common_name: 'Anaconda (unidentified)',
+      city: 'Sindangsari',
+    },
+    {
+      id: 94,
+      scientific_name: 'Varanus salvator',
+      common_name: 'Legaan, water',
+      city: 'Charlotte Amalie',
+    },
+    {
+      id: 95,
+      scientific_name: 'Aepyceros mylampus',
+      common_name: 'Impala',
+      city: 'Blessington',
+    },
+    {
+      id: 96,
+      scientific_name: 'Funambulus pennati',
+      common_name: 'Palm squirrel',
+      city: 'Chadong',
+    },
+    {
+      id: 97,
+      scientific_name: 'Agelaius phoeniceus',
+      common_name: 'Blackbird, red-winged',
+      city: 'Toupi',
+    },
+    {
+      id: 98,
+      scientific_name: 'Myotis lucifugus',
+      common_name: 'Little brown bat',
+      city: 'Makadi Bay',
+    },
+    {
+      id: 99,
+      scientific_name: 'Nectarinia chalybea',
+      common_name: 'Sunbird, lesser double-collared',
+      city: 'Surkhet',
+    },
+    {
+      id: 100,
+      scientific_name: 'Papilio canadensis',
+      common_name: 'Butterfly, canadian tiger swallowtail',
+      city: 'Taavetti',
+    },
+  ];
+
+  //DICE SE SONO ABILITATO OPPURE NO
+  abilitato: boolean;
+
+  constructor() {
+    this.abilitato = false;
+  }
+
+  setAbilitato(stato: boolean) {
+    this.abilitato = stato;
+  }
+
+  getAbilitato(): boolean {
+    return this.abilitato;
+  }
+}

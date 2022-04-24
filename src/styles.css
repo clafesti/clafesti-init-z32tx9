@@ -1,0 +1,7 @@
+/* Add application styles & imports to this file! */
+@import "~bootstrap/dist/css/bootstrap.min.css";
+ 
+div {
+  border-style: solid;
+  border-width: 1px;
+} 
